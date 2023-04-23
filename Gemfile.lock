@@ -1,0 +1,27 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    eim_xml (0.0.4)
+    image_size (3.2.0)
+    math_ml (0.14)
+      eim_xml
+    rake (13.0.6)
+    review (2.5.0)
+      image_size
+      rouge
+      rubyzip
+    rexml (3.2.5)
+    rouge (4.1.0)
+    rubyzip (2.3.2)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  math_ml
+  rake
+  review (= 2.5.0)
+  rexml
+
+BUNDLED WITH
+   2.2.33
