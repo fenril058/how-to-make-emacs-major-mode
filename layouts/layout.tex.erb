@@ -124,11 +124,13 @@ end
 <%- end -%>
 \usepackage[table]{xcolor}%requires colortbl, array
 
-\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,%
-     pdftitle={<%= escape_latex(@config.name_of("booktitle")) %>},%
-     pdfauthor={<%= escape_latex(@config.names_of("aut").join(i18n_t.('names_splitter'))) %>}]{hyperref}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true]{hyperref}
 <%- p = xelatex?() ? '%' : '' -%>
 <%= p %>\usepackage{pxjahyper}   % Bookmarkの文字化け対策（日本語向け）
+\hypersetup{%
+     pdftitle={<%= escape_latex(@config.name_of("booktitle")) %>},%
+     pdfauthor={<%= escape_latex(@config.names_of("aut").join(i18n_t.('names_splitter'))) %>}%
+}
 
 <%- p = ["utbook", "tbook"].include?(@documentclass) ? '' : '%' -%>
 <%= p %>\usepackage{plext}       % 縦書き用のパッケージ
